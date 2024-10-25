@@ -27,9 +27,9 @@ brand_amount = df['name'].value_counts()
 #put it in a bar chart
 plt.figure(figsize=(10, 6)) 
 brand_amount.plot(kind = 'bar', color = ['#e39ff6', '#2c041c', '#710193'], edgecolor='black')
-plt.ylabel("No. of Flowers Spotted") 
-plt.xlabel("Species")
-plt.title("Amount of each Species Spotted")
+plt.ylabel("Amount") 
+plt.xlabel("Cereal")
+plt.title("Amount of each Cereal")
 
 plt.ylim(0, brand_amount.max() + 5)
 
@@ -39,3 +39,9 @@ plt.gca().spines['right'].set_visible(False) # remove line on right
 plt.show()
 
 print("There are an equal number of each cereal in this dataset")
+
+
+
+# Sources:
+# - https://www.kaggle.com/datasets/crawford/80-cereals?resource=download
+# My pands projct from last year
