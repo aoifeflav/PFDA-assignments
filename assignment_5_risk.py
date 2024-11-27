@@ -55,6 +55,52 @@ plt.show()
 
 
 
+# Function to simulate armies of arbirary size fighting eachother
+def simulate_war(attacker_size, defender_size, num_simulations):
+    attacker_wins = 0
+    defender_wins = 0
+    
+    for _ in range(num_simulations):
+        # Army sizes for each simulation
+        attacker_army = attacker_size
+        defender_army = defender_size
+        
+        # keep going until one side is wiped out
+        while attacker_army > 0 and defender_army > 0:
+            attacker_loses, defender_loses = risk_game()
+            attacker_army -= attacker_loses
+            defender_army -= defender_loses
+        
+        # Check which side won
+        if attacker_army > 0:
+            attacker_wins += 1
+        else:
+            defender_wins += 1
+    
+    # Plotting the results using a pie chart
+    categories = ['Attacker Wins', 'Defender Wins']
+    values = [attacker_wins, defender_wins]
+
+    plt.figure(figsize=(8, 8))
+    colors = ['pink', 'purple']
+    plt.pie(
+        values,
+        labels=categories,
+        autopct='%1.1f%%',
+        startangle=140,
+        colors=colors,
+    )
+
+    # title
+    plt.title(f'Risk Full War Simulation ({num_simulations} Rounds)')
+
+    # Display the pie chart
+    plt.show()
+
+# example
+simulate_war(attacker_size=55, defender_size=67, num_simulations=500)
+
+
 #Source: 
 # https://thepythoncodingbook.com/2022/12/30/using-python-numpy-to-improve-board-game-strategy-risk/
 # https://realpython.com/python-zip-function/
