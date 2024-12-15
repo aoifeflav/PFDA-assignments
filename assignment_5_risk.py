@@ -1,5 +1,5 @@
-# The program should simulates 1000 individual battle rounds in Risk (3 vs 2) and plot the result.
-#Author: Aoife Flavin
+# The program should simulate 1000 individual battle rounds in Risk (3 vs 2) and plot the result.
+# Author: Aoife Flavin
 
 #import numpy and matplotlib modules
 import numpy as np
@@ -103,4 +103,6 @@ simulate_war(attacker_size=55, defender_size=67, num_simulations=500)
 
 #Source: 
 # https://thepythoncodingbook.com/2022/12/30/using-python-numpy-to-improve-board-game-strategy-risk/
+# https://stackoverflow.com/questions/74421396/risk-game-with-python
+# https://www.geeksforgeeks.org/random-numbers-in-python/
 # https://realpython.com/python-zip-function/
